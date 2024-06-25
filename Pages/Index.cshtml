@@ -1,0 +1,85 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<html>
+<head>
+	<title>KhumaloCrafts</title>
+	<link rel="stylesheet" href="style3.css">
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		font-family: san-serif;
+		.banner3
+
+	{
+		width: 100%;
+		height: 100vh;
+		background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(PictureA.jpg);
+		background-size: cover;
+		background-position: center;
+	}
+
+	.navbar3 {
+		width: 85%;
+		margin: auto;
+		padding: 35px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+		.navbar3 ul li {
+			list-style: none;
+			display: inline-block;
+			margin: 0 20px;
+			font-size: 200%;
+		}
+
+			.navbar3 ul li a {
+				text-decoration: none;
+				color: #fff;
+				text-transform: uppercase;
+			}
+
+	.content3 {
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		text-align: center;
+		color: #fff;
+		font-size: 150%;
+	}
+
+</style>
+<body>
+	<div class="banner3">
+		<div class="navbar3">
+			<ul>
+				<li><a href="Craft.html">Home</a></li>
+				<li><a href="Sales.html">Sales</a></li>
+				<li><a href="ContactUs.html">Contact Us</a></li>
+				<li><a href="MyWork.html">My Work</a></li>
+
+			</ul>
+		</div>
+	</div>
+	<div class="content3">
+		<h1>The work of KhumaloCrafts</h1>
+		<p>
+			James Khumalo is aiming to establish KhumaloCraft Emporium as a global e-commerce platform showcasing handcrafted products,
+			connecting artisans with consumers worldwide. To realize this vision, he needs a scalable, user-friendly platform leveraging
+			cloud computing, with a focus on accessibility and positive user experience. Challenges include selecting cloud service models,
+			deployment strategies, and designing an efficient database schema for product and user data to ensure scalability.
+			The development team must tackle technical hurdles such as global accessibility and
+			maintaining a seamless user experience.
+		</p>
+
+	</div>
+</body>
+</html>

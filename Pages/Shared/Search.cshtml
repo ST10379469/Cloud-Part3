@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Search";
+}
+<h4>Search</h4>
+
+<div class="search_wrap".>
+    <input class="form-control col-md-11" type="text" placeholder="Search.," aria-label="Search" id="txtSearch" style="width"
+    <button type="submit" class="btn btn-primary col-md-1" onclick="btnSearch()">
+        Search
+    </button>
+</div>
+<div class="results_wrap">
+    @foreach (var data in ViewBag.SearchData)
+    {
+        <div class="result_box">
+
+            <div class="result_img">
+                @if (data.filePath.Contains(".png") || data.filePath.Contains(".PNG"))
+                {
+                    <a href="@data.filePath" target="_blank">
+                        <img class="img.responsive result_img" alt="image not found" src=@data.filePath />
+                    </a>
+                }
+                else if (data.filePath.Contains(".doc") || data.filePath.Contains(".docx"))
+                {
+                    var newPath = "https://docs.google.com/gview?url=" + data.filePath + "&embedded=true";
+                    <a href ="@newPath" target="_blank">
+                        <iframe src="@newPath" style="width: - webkit-fill-available;"height="250"></iframe>
+                    </a>
+                }
+                else
+                {
+                    <iframe src="@data.filePath" style="width": -webkit-fill-available;"height="250"></iframe>
+                }
+            </div>
+
+            <div class="searched_data"id="divSearchData">
+                <li><b>File Name : @data.fileName </b></li>
+                <li> File Path :@data.filePath </li>
+                <hr/>
+                @if (data.highlightedText == null)
+                {
+                    <li> @data.fileText </li>
+                }
+                else
+                {
+                    <li> @Html.Raw(data.highlightedtext)</li>
+                }
+            </div>
+            </div>
+    }
+
+</div>
+<script src ="~/js/site.js">    </script>
